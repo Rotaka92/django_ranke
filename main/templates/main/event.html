@@ -1,0 +1,35 @@
+{% extends 'main/header.html' %}
+
+{% block content %}
+
+    <div class="row">
+
+        <div class="col s12, m8, l8">
+            <h3>{{event.event_title}}</h3>
+            <p style="font-size:70%">Published {{event.event_published}}</p>
+            {{event.event_content|safe}}
+        </div>
+
+        <div class="col s12 m4 l4">
+            <ul class="collapsible popout">
+                {% for event in sidebar %}
+                    {% if forloop.counter0 == this_event_idx %}
+                        <li class="active">
+                            <div class="collapsible-header">{{event.event_title}}<br>(currently viewing)</div>
+                        </li>
+                    {% else %}
+                        <li>
+                            <div class="collapsible-header">{{event.event_title}}</div>
+                            <div class="collapsible-body">
+                                <p><a href="/{{event.event_slug}}"><button class="btn waves-effect waves-light right-align" style="background-color:yellow; color:black">Mehr Infos</button></a></p>
+
+                            </div>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+
+{% endblock %}
