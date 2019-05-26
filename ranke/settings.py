@@ -25,7 +25,7 @@ SECRET_KEY = 'h4rc*@qi8ib_==9dy%#rrxq-hdud+@0+1j+=7wpv5o*3wjf9c!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['dry-plateau-34668.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -160,6 +160,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = 'C:/Users/Robin/Desktop/ranke/static'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'C:/Users/Robin/Desktop/ranke/media'
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'assets'),)
 
 
 
